@@ -16,13 +16,36 @@ The Bismuth plugin system, although very lightweight, allows for action and filt
 
 # Overview
 
-TODO
+The plugins live in a "plugin" subdirectory.  
+Each plugin has its own directory.  
+For instance:
+plugins/
+plugins/010_webhook/
+plugins/100_test_block/
+plugins/110_test_status
+
+A plugin directory is formated as ̀`000_pluginname`. The numerical prefix acts as a priority level. Lowest prio gets run first.  
+Priorities of 000-099 are reserved for low level plugins.  
+100-199 for demo and example plugins.  
+900-999 for test plugins.
+In each plugin directory, at least one __init__.py file containing the plugin code is needed.
 
 # Example plugins
 
-TODO: See plugins/ directory
+## Minimal plugin
+
+A plugin wanting to implement a "block" action hook only has to declare a simple function:
+
+`plugins/900_test/__init__.py`:
+```
+def action_block(block):
+    print(block)
+``` 
+
+## Demo plugins
+
+See plugins/ directory (WIP)
 
 # Full API
 
-TODO  
-The full API reference can be found in doc/ directory
+The full API reference can be found in doc/ directory (WIP)
