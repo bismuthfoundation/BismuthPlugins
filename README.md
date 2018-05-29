@@ -11,6 +11,11 @@ However this makes upgrades harder since the core code has to be modified and th
 
 The Bismuth plugin system, although very lightweight, allows for action and filter hooks on critical events, for easy feature addition.
 
+## How to begin
+
+* Make sure you use current github code
+* Copy the plugins directory of this BismuthPlugins repo under your bismuth node directory
+* Run the node
 
 ## The plugin framework 
 
