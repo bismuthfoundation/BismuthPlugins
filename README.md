@@ -48,11 +48,11 @@ def action_block(block):
 
 ### Demo plugins
 
-See plugins/ directory (WIP)
+See (https://github.com/bismuthfoundation/BismuthPlugins/tree/master/plugins)[plugins/] directory (WIP).
 
 # Full API
 
-The full API reference can be found in doc/ directory (WIP)
+The full API reference can be found in (https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc)[doc/] directory (WIP).
 
 # A word of caution
 
