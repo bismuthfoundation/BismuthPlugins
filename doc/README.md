@@ -2,7 +2,7 @@
 
 ## File architecture
 
-The plugins live in a "plugin" subdirectory.  
+The plugins live in a "plugin" subdirectory of the Bismuth node.  
 Each plugin has its own directory.  
 For instance:
 plugins/
@@ -37,11 +37,45 @@ Params is usually a dict, which content depends on the specific hook.
 ## Current Action Hooks
 
 ### block
+> Triggered on every new digested block (can be a lot when catching up after down time)
+
+See `100_test_block` demo plugin.
+
+```
+def action_block(block):
+    print("Got New Block {}".format(json.dumps(block)))
+```
+
+block dict example content:
+```
+{"height": 664760, "diff": 111.0051389824, 
+ "hash": "68fd1b772858b216c4c5a5c6e0cb7966648ee893916407a2eb74087c", 
+ "action": "block"}
+```
+
+Possible uses:
+* alert on diff change
+* feed pool / miner with latest block info to avoid polling
+
+Possible upgrade: Maybe will also embed the miner address for that block.
 
 ### fullblock
+> Triggered on every new digested block (can be a lot when catching up after down time)
+
+Same as block, but does also have a "transactions" dict entry with full list of the block transactions.
+
+Possible uses:
+* any action on a new transaction event
+
+This is the most complex hook for now, it can do a looooot of things. Demo and plugins will follow.  
+Just a few:  
+* anonymous but secure params settings for pools.
+* Functions as a service, with possible payment, on the chain. Distributed super computer.
+* Being paid for custom value added API
+* Digital goods auto delivery
 
 ### status
-Called every 30 seconds, when displaying console status.
+> Called every 30 seconds, when displaying console status.
 
 See `110_test_status` demo plugin.
 
