@@ -1,7 +1,7 @@
 # BismuthPlugins
 Plugin API Documentation and demo plugins for Bismuth Nodes.
 
-Bismuth is the first cryptocurrency and platform written from scratch, in Python.
+Bismuth is the first cryptocurrency and platform written from scratch, in Python.  
 https://github.com/hclivess/Bismuth
 
 ## Need for plugin
@@ -48,11 +48,11 @@ def action_block(block):
 
 ### Demo plugins
 
-See (https://github.com/bismuthfoundation/BismuthPlugins/tree/master/plugins)[plugins/] directory (WIP).
+See [https://github.com/bismuthfoundation/BismuthPlugins/tree/master/plugins](plugins/) directory (WIP).
 
 # Full API
 
-The full API reference can be found in (https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc)[doc/] directory (WIP).
+The full API reference can be found in [https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc](doc/) directory (WIP).
 
 # A word of caution
 
