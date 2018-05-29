@@ -14,7 +14,7 @@ The Bismuth plugin system, although very lightweight, allows for action and filt
 
 ## The plugin framework 
 
-# Overview
+### Overview
 
 The plugins live in a "plugin" subdirectory.  
 Each plugin has its own directory.  
@@ -28,11 +28,15 @@ A plugin directory is formated as `000_pluginname`. The numerical prefix acts as
 Priorities of 000-099 are reserved for low level plugins.  
 100-199 for demo and example plugins.  
 900-999 for test plugins.
-In each plugin directory, at least one __init__.py file containing the plugin code is needed.
+In each plugin directory, at least one `__init__.py` file containing the plugin code is needed.
 
-# Example plugins
+### Activating / Deactivating plugins
 
-## Minimal plugin
+As for now, all plugins present in plugins/ directory will be loaded.  
+So, only place the ones you want to run.  
+You can have a "plugins.available" directory and drop unused plugins there.
+
+### Minimal plugin
 
 A plugin wanting to implement a "block" action hook only has to declare a simple function:
 
@@ -42,10 +46,16 @@ def action_block(block):
     print(block)
 ``` 
 
-## Demo plugins
+### Demo plugins
 
 See plugins/ directory (WIP)
 
 # Full API
 
 The full API reference can be found in doc/ directory (WIP)
+
+# A word of caution
+
+Current plugins are harmful (but may need some config to run properly).  
+Future plugins could be more dangerous (like able to emit transactions). So, always make sure you trust the plugin source, and check its source code.  
+Certified plugins will come later on.
