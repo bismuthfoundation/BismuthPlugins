@@ -61,6 +61,6 @@ The full API reference can be found in [https://github.com/bismuthfoundation/Bis
 
 # A word of caution
 
-Current plugins are harmful (but may need some config to run properly).  
+Current plugins are harmless (but may need some config to run properly).  
 Future plugins could be more dangerous (like able to emit transactions). So, always make sure you trust the plugin source, and check its source code.  
 Certified plugins will come later on.
