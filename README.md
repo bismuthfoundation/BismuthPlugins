@@ -24,7 +24,7 @@ plugins/010_webhook/
 plugins/100_test_block/
 plugins/110_test_status
 
-A plugin directory is formated as ̀`000_pluginname`. The numerical prefix acts as a priority level. Lowest prio gets run first.  
+A plugin directory is formated as `000_pluginname`. The numerical prefix acts as a priority level. Lowest prio gets run first.  
 Priorities of 000-099 are reserved for low level plugins.  
 100-199 for demo and example plugins.  
 900-999 for test plugins.
