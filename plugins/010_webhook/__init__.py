@@ -2,16 +2,20 @@
 Plugin demo
 
 Generic webhook action Hook. Allows IFTTT or other actions.
-To be used by other plubgins.
+To be used by other plugins.
 
 """
 
 
 import json
 import requests
+import threading
 
 
 VERBOSE = False
+
+# If True, will run each call in its own thread not to slow down main node code.
+USE_THREADS = True
 
 # global ID for json-rpc requests
 ID = 0
@@ -35,6 +39,23 @@ def _jsonrpc(url, data):
     requests.post(url, data)
 
 
+def _doit(params):
+    """
+    Can Do the right call. Can be launched from the main thread, or in its own.
+    :param params:
+    :return:
+    """
+    type = params['type'].upper()
+    if 'POST' == type:
+        _post(params['url'], params['data'])
+    elif 'GET' == type:
+        _get(params['url'], params['data'])
+    elif 'JSON-RPC' == type:
+        _jsonrpc(params['url'], params['data'])
+    else:
+        raise ValueError("Unknown webhook type")
+
+
 def action_webhook(params):
     """
     params is a dict
@@ -45,18 +66,15 @@ def action_webhook(params):
     :return:
     """
     global VERBOSE
+    global USE_THREADS
     try:
         if VERBOSE:
             print("Got action_webhook {}".format(json.dumps(params)))
-        type = params['type'].upper()
-        if 'POST' == type:
-            _post(params['url'], params['data'])
-        elif 'GET' == type:
-            _get(params['url'], params['data'])
-        elif 'JSON-RPC' == type:
-            _jsonrpc(params['url'], params['data'])
+        if USE_THREADS:
+            server_thread = threading.Thread(target=_doit, args=(params,))
+            server_thread.daemon = True
+            server_thread.start()
         else:
-            raise ValueError("Unknown webhook type")
+            _doit(params)
     except Exception as e:
         raise ValueError("Exception on webhook: '{}'".format(e))
-
