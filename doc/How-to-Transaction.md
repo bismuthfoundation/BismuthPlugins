@@ -160,6 +160,7 @@ This is for my personal need, as a pool owner, but this is applicable to any Bis
 I need my miners to tune some of their params. for instance, tell me what minimum payout they want.  
 - I want something automatic
 - I need something secure (must be sure whom is asking is the address owner)
+- I don't want to bother with usernames, passwords, emails or any kind of additional auth. Would be silly!
 - I want to service to stay fully anonymous (at least, pseudonymous)
 
 With this, I can easily do it (and will asap).
