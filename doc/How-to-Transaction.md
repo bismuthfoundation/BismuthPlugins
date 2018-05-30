@@ -9,7 +9,7 @@ This step by step tutorial will show you how to do that in just a few edit with 
 We could start from an existing plugin and modify it, but here we'll do it all by hand, don't worry.
 
 * Create a directory for your plugin, under plugins. For instance, plugins/201_on_transaction
-* Create an empty __init__.py file in this directory
+* Create an empty `__init__.py` file in this directory
 
 ## Useful hook
 
@@ -66,13 +66,14 @@ We just parsed the transactions list, and compared the 'to' field to our address
 ## Format as needed
 
 A structured format would be better than a raw list, so let's convert this data:  
-```data = {'timestamp': tx[1], 'from': tx[2], 'to': tx[3], 'amount': str(tx[4]),
-           'fees': str(tx[8]), 'reward': str(tx[9]), 'operation': tx[10], 'openfield': tx[11]}
+```
+data = {'timestamp': tx[1], 'from': tx[2], 'to': tx[3], 'amount': str(tx[4]),
+        'fees': str(tx[8]), 'reward': str(tx[9]), 'operation': tx[10], 'openfield': tx[11]}
 ```
 
 > Note: the str() type conversion on amounts and reward is mandatory, or we could get some "Decimal" types that can't be properly serialized.
 
-## Do not reinvent the wheel
+## Do not reinvent the wheel
 
 Now that we have what we want, just send it.  
 We could import requests, but well, calling an http hook is something we will do many times, do we want to copy-paste such code over and over again, and deal with things like calling the hook from a thread, so we won't slow the node down?
@@ -106,7 +107,7 @@ Copy the 010_webhook directory under plugins so it's loaded, and then when you n
 
 You call an action hook, named 'webhook', and pass a dict() as param.  
 * url is the http url to call.  
-* type is ('GET' or 'POST')
+* type is 'GET' or 'POST'
 * data is a dict of {'var': value} to send.
 
 ## The whole code
