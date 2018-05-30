@@ -146,3 +146,28 @@ def action_fullblock(full_block):
 ```
 
 You'll find that code in the 201_on_transaction folder, you can tweak it for your specific need.
+
+# What next?
+
+Since a webhook can do anything, so can you.  
+Simple use could be to give the url of an IFTTT webhook, so you can trigger anything IFTTT supports (tweet, email, alert, add to dropbox...)  
+Or you send that to your custom php dashboard, and deal with it.
+
+## Concrete application
+
+This is for my personal need, as a pool owner, but this is applicable to any Bismuth service operator.
+
+I need my miners to tune some of their params. for instance, tell me what minimum payout they want.  
+- I want something automatic
+- I need something secure (must be sure whom is asking is the address owner)
+- I want to service to stay fully anonymous (at least, pseudonymous)
+
+With this, I can easily do it (and will asap).
+
+- The miner uses his wallet to send a transaction, 0 BIS, with a specific message.  
+  For eggpool, it will be 'set' as operation, and 'min_payout=1' as data. Seems clear enough?
+- On my server, the node runs this very same plugin and filters these transactions.  
+  Since the transactions are signed, I'm sure it comes from the owner of the address.  
+  I don't even have to know him nor it's ip address to be 100% sure it's him.
+- The webhook calls a specific url on the pool server, this one only accepts incoming data from known ips (the node server, or localhost), so it's secure.  
+  The php code then update what needs to be pool side.
