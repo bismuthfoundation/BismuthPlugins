@@ -2,12 +2,12 @@
 
 WIP
 
-## Core features
+## Core features
 
 * More core plugins
 * Allow for plugin activation/deactivation without node reload?
 
-## Doc
+## Doc
 
 * More tutorials
 * More use cases
