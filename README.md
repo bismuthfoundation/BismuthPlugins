@@ -59,6 +59,10 @@ See [https://github.com/bismuthfoundation/BismuthPlugins/tree/master/plugins](pl
 
 The full API reference can be found in [https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc](doc/) directory (WIP).
 
+# See also
+
+A nice post and interview by Portait on Steemit: https://steemit.com/cryptocurrency/@bitsignal/the-bismuth-plugin-system
+
 # A word of caution
 
 Current plugins are harmless (but may need some config to run properly).  
