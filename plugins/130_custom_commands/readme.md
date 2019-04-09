@@ -35,8 +35,8 @@ print("test3", test3)
 
 ## Usage
 
-Copy the plugin to a directory of your to edit.  
-Keep in mind the directory format 000_plugin_name and the nnumbering https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc#file-architecture
+Copy the plugin to a directory of yours to edit, under bismuth/plugins.  
+Keep in mind the directory format 000_plugin_name and the numbering https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc#file-architecture
 
 Regular plugins should use numbers from 200 to 899
 
