@@ -2,7 +2,7 @@
 
 Showcase how a plugin can easily add features and extra commands to a Bismuth node.
 
-> This plugin requires 030_socket_client plugin to also be in the plugins directory.
+> This plugin requires 035_socket_client plugin to also be in the plugins directory.
 
 ## Demo
 
