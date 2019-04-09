@@ -8,7 +8,7 @@ Showcase how a plugin can easily add features and extra commands to a Bismuth no
 
 The demo adds 3 commands XTRA_test1, XTRA_echo, XTRA_echo2 with different parameters passing.
 
-## Test client
+## Test client
 
 You can test the demo plugin with a simple script like 
 ```
@@ -33,7 +33,7 @@ test3 = connections.receive (s, 10)
 print("test3", test3)
 ```
 
-## Usage
+## Usage
 
 Copy the plugin to a directory of your to edit.  
 Keep in mind the directory format 000_plugin_name and the nnumbering https://github.com/bismuthfoundation/BismuthPlugins/tree/master/doc#file-architecture
@@ -55,7 +55,7 @@ This command takes no param. Simply defining a function here with XTRA_ prefix m
 
 ## XTRA_echo
 
-"This command takes one param from an extra packet and echoes it back
+This command takes one param from an extra packet and echoes it back
 
 ## XTRA_echo2
 
