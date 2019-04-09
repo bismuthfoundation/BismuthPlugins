@@ -41,3 +41,16 @@ WARNING: since it's a direct insert, we have no feedback on the validity of the 
 ### filter_send_tx(tx_dict)
 
 Sends the signed tx to the local host via a mpinsert message, adds the answer in the result
+
+## tx_dict format
+
+A dict, with the following keys :
+
+- timestamp
+- amount
+- address
+- recipient
+- signature
+- public_key
+- operation
+- openfield
