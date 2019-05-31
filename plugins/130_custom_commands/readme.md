@@ -19,17 +19,17 @@ s = socks.socksocket()
 s.settimeout(10)
 s.connect(("127.0.0.1", 5658))
 
-connections.send (s, "XTRA_test1", 10)
-test1 = connections.receive (s, 10)
+connections.send (s, "XTRA_test1")
+test1 = connections.receive (s)
 print("test1", test1)
 
-connections.send (s, "XTRA_echo", 10)
-connections.send (s, "Hi!", 10)
-test2 = connections.receive (s, 10)
+connections.send (s, "XTRA_echo")
+connections.send (s, "Hi!")
+test2 = connections.receive (s)
 print("test2", test2)
 
-connections.send (s, "XTRA_echo2 p1 p2 p3", 10)
-test3 = connections.receive (s, 10)
+connections.send (s, "XTRA_echo2 p1 p2 p3")
+test3 = connections.receive (s)
 print("test3", test3)
 ```
 
