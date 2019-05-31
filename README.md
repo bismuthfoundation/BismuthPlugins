@@ -2,7 +2,7 @@
 Plugin API Documentation and demo plugins for Bismuth Nodes.
 
 Bismuth is the first cryptocurrency and platform written from scratch, in Python.  
-https://github.com/hclivess/Bismuth
+https://github.com/bismuthfoundation/Bismuth
 
 ## Need for plugin
 
