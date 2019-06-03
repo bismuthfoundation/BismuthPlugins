@@ -12,24 +12,24 @@ The demo adds 3 commands XTRA_test1, XTRA_echo, XTRA_echo2 with different parame
 
 You can test the demo plugin with a simple script like 
 ```
-import socks
+from socket import socket
 import connections
 
-s = socks.socksocket()
+s = socket()
 s.settimeout(10)
 s.connect(("127.0.0.1", 5658))
 
-connections.send (s, "XTRA_test1")
-test1 = connections.receive (s)
+connections.send(s, "XTRA_test1")
+test1 = connections.receive(s)
 print("test1", test1)
 
-connections.send (s, "XTRA_echo")
-connections.send (s, "Hi!")
-test2 = connections.receive (s)
+connections.send(s, "XTRA_echo")
+connections.send(s, "Hi!")
+test2 = connections.receive(s)
 print("test2", test2)
 
-connections.send (s, "XTRA_echo2 p1 p2 p3")
-test3 = connections.receive (s)
+connections.send(s, "XTRA_echo2 p1 p2 p3")
+test3 = connections.receive(s)
 print("test3", test3)
 ```
 
