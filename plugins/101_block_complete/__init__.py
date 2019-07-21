@@ -24,7 +24,7 @@ def action_init(params):
     except:
         # Better ask forgiveness than permission
         pass
-    # print(__file__)  # ./plugins/100_test_block/__init__.py
+    # print(__file__)  # ./plugins/100_test_block/__init__.old.py
 
 
 def action_block(block):
